@@ -1,0 +1,14 @@
+﻿<Page x:Class="TaskProject.pages.SQLTables"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskProject.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="470" d:DesignWidth="680"
+      Title="SQLTables">
+
+    <Grid Background="Transparent" Margin="20" HorizontalAlignment="Center" Width="650" Height="400">
+        <Image Source="{StaticResource SQLTables}" Height="220"/>
+    </Grid>
+</Page>

@@ -1,0 +1,92 @@
+﻿<Window x:Class="TaskProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskProject"
+        mc:Ignorable="d"
+        Title="Task Manager" Height="500" Width="800" Loaded="Window_Loaded">
+    <DockPanel LastChildFill="False" Background="White">
+        <!--MENU BAR-->
+        <Menu x:Name="menuBar" DockPanel.Dock="Top" Padding="5" Background="Navy" Foreground="White">
+            <MenuItem Header="File">
+                <MenuItem x:Name="menuNewTask" Header="New Task" Foreground="Black" Click="menuNewTask_Click"/>
+                <Separator/>
+                <MenuItem Header="To PDF" Foreground="Black" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource PDF}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Print" Foreground="Black" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource Print}"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="closeWindow" Header="Exit" Foreground="Black" Click="closeWindow_Click"/>
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem x:Name="menuDashboard" Header="Home" IsCheckable="True" Checked="menuDashboard_Checked" Foreground="Black"/>
+                <Separator/>
+                <MenuItem x:Name="menuSQL" Header="SQL Tables" IsCheckable="True" Checked="menuSQL_Checked" Foreground="Black"/>
+                <Separator/>
+                <MenuItem x:Name="menuTasks" Header="All Tasks" IsCheckable="True" Checked="menuTasks_Checked"  Foreground="Black"/>
+                <MenuItem x:Name="menuCompleted" Header="Completed Tasks" Checked="menuCompleted_Checked" IsCheckable="True" Foreground="Black"/>
+                <MenuItem x:Name="menuCategories" Header="Categories" Checked="menuCategories_Checked" IsCheckable="True" Foreground="Black"/>
+            </MenuItem>
+        </Menu>
+        <!--STACK PANEL-->
+        <StackPanel Width="120" Background="LightGray" DockPanel.Dock="Left">
+            <Button x:Name="btnShowTasks" Content="TASKS" Click="btnShowTasks_Click" Foreground="Navy"
+                    Background="Transparent" BorderThickness="0" Margin="0,10,0,0" Padding="0,10" FontWeight="Bold">
+                <Button.ToolTip>
+                    <ToolTip Background="AliceBlue">
+                        <StackPanel Margin="5">
+                            <TextBlock FontWeight="Bold">View All Tasks</TextBlock>
+                            <TextBlock Margin="0,5,0,0">Access all incomplete tasks, mark as <LineBreak/>complete, or remove from task list.</TextBlock>
+                            <Border BorderBrush="Black" BorderThickness="0,1,0,0" Margin="0,8"/>
+                            <WrapPanel>
+                                <Image Source="{StaticResource Help}" Width="25"/>
+                                <TextBlock FontStyle="Italic" Margin="5,0" VerticalAlignment="Center" FontSize="11">Implement help function here.</TextBlock>
+                            </WrapPanel>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button x:Name="btnShowCompleted" Content="COMPLETED" Click="btnShowCompleted_Click"  Foreground="Navy"
+                    Background="Transparent" BorderThickness="0" Padding="0,10" FontWeight="Bold">
+                <Button.ToolTip>
+                    <ToolTip Background="AliceBlue">
+                        <StackPanel Margin="5">
+                            <TextBlock FontWeight="Bold">View All Completed Tasks</TextBlock>
+                            <TextBlock Margin="0,5,0,0">Access all tasks marked as complete and<LineBreak/>when they were completed.</TextBlock>
+                            <Border BorderBrush="Black" BorderThickness="0,1,0,0" Margin="0,8"/>
+                            <WrapPanel>
+                                <Image Source="{StaticResource Help}" Width="25"/>
+                                <TextBlock FontStyle="Italic" Margin="5,0" VerticalAlignment="Center" FontSize="11">Implement help function here.</TextBlock>
+                            </WrapPanel>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button x:Name="btnShowCategories" Content="CATEGORIES" Click="btnShowCategories_Click" Foreground="Navy"
+                    Background="Transparent" BorderThickness="0" Padding="0,10" FontWeight="Bold">
+                <Button.ToolTip>
+                    <ToolTip Background="AliceBlue">
+                        <StackPanel Margin="5">
+                            <TextBlock FontWeight="Bold">View All Categories</TextBlock>
+                            <TextBlock Margin="0,5,0,0">Access all categories, their descriptions,<LineBreak/>and current number of incomplete tasks.</TextBlock>
+                            <Border BorderBrush="Black" BorderThickness="0,1,0,0" Margin="0,8"/>
+                            <WrapPanel>
+                                <Image Source="{StaticResource Help}" Width="25"/>
+                                <TextBlock FontStyle="Italic" Margin="5,0" VerticalAlignment="Center" FontSize="11">Implement help function here.</TextBlock>
+                            </WrapPanel>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+        <!--FRAME-->
+        <Frame x:Name="pageFrame" Visibility="Visible" NavigationUIVisibility="Hidden"/>
+    </DockPanel>
+</Window>

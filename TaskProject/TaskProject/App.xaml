@@ -1,0 +1,22 @@
+﻿<Application x:Class="TaskProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TaskProject"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="Add" UriSource="assets\icons8-add-new-50.png"/>
+            <BitmapImage x:Key="Task" UriSource="assets\icons8-todo-list-50.png"/>
+            <BitmapImage x:Key="Filter" UriSource="assets\icons8-filter-50.png"/>
+            <BitmapImage x:Key="Trash" UriSource="assets\trash.png"/>
+            <BitmapImage x:Key="Check" UriSource="assets\checkmark.png"/>
+            <BitmapImage x:Key="Checkbox" UriSource="assets\checkbox.png"/>
+            <BitmapImage x:Key="Folders" UriSource="assets\folder-tree.png"/>
+            <BitmapImage x:Key="Print" UriSource="assets\print.png"/>
+            <BitmapImage x:Key="PDF" UriSource="assets\pdf.png"/>
+            <BitmapImage x:Key="Warning" UriSource="assets\warning.png"/>
+            <BitmapImage x:Key="Help" UriSource="assets\help.png"/>
+            <BitmapImage x:Key="SQLTables" UriSource="assets\sql-table.png"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
